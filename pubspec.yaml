@@ -65,10 +65,14 @@ flutter:
       - assets/images/logo.png
       - assets/images/symbol.png
       - assets/images/mail.png
+      - assets/images/lock.png
       - assets/images/home.png
       - assets/images/healthy.png
       - assets/images/bell.png
       - assets/images/user.png
+      - assets/images/google.png
+      - assets/images/apple.png
+      - assets/images/facebook.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

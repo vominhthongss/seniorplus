@@ -74,6 +74,7 @@ class _InputState extends State<Input> {
                         _obscureText ? Icons.visibility_off : Icons.visibility,
                         semanticLabel:
                             _obscureText ? 'show password' : 'hide password',
+                        color: Color(0xFF5CB270),
                       ),
                     )
                   : null,

@@ -8,14 +8,14 @@ import 'package:seniorplus/widgets/title-name.dart';
 import '../main.dart';
 import '../widgets/social-button.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   late final _emailController = TextEditingController();
   late final _passwordController = TextEditingController();
   final dio = Dio(BaseOptions(
@@ -44,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const TitleName(text: 'Đăng ký', size: 18),
+                const TitleName(text: 'Đăng nhập', size: 18),
                 const SizedBox(height: 16),
                 Input(
                   hintText: 'Nhập email',
@@ -60,28 +60,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   type: 'password',
                   label: 'Mật khẩu',
                   controller: _passwordController,
-                ),
-                const SizedBox(height: 16),
-                const Input(
-                  hintText: 'Nhập lại mật khẩu',
-                  icon: 'assets/images/lock.png',
-                  type: 'password',
-                  label: 'Xác nhận mật khẩu',
-                  controller: null,
-                ),
-                const SizedBox(height: 60),
-                const Text(
-                  'By creating an account, you agreed to our',
-                  textAlign: TextAlign.center,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    TitleName(text: 'Terms & Conditions', size: 13),
-                    Text(' and '),
-                    TitleName(text: 'Privacy Policy', size: 13)
-                  ],
                 ),
                 const SizedBox(height: 30),
                 Button(

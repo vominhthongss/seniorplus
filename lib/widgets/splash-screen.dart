@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:seniorplus/screens/main-screen.dart';
+import 'package:seniorplus/screens/sign-in-screen.dart';
 import 'package:seniorplus/screens/sign-up-screen.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/description.dart';
@@ -20,12 +21,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Wait for 3 seconds before navigating to HomeScreen
-    // Timer(const Duration(seconds: 0), () {
-    //   Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => const MainScreen()),
-    //   );
-    // });
+    Timer(const Duration(seconds: 0), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const SignInScreen()),
+      );
+    });
   }
 
   @override
