@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/input.dart';
 import 'package:dio/dio.dart';
@@ -95,7 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 50),
                 const Text(
                   '- hoặc đăng kí bằng -',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Color(HINT_TEXT)),
                 ),
                 const SizedBox(height: 50),
                 Row(

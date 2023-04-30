@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:seniorplus/constants/colors.dart';
 
 class Input extends StatefulWidget {
   final String icon;
@@ -30,13 +31,14 @@ class _InputState extends State<Input> {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.only(bottom: 10),
+          padding: const EdgeInsets.only(bottom: 10),
           child: Row(
             children: [
               Text(
                 label,
                 textAlign: TextAlign.start,
-                style: TextStyle(color: Color(0xff5CB270), fontSize: 16),
+                style:
+                    const TextStyle(color: Color(PRIMARY_COLOR), fontSize: 16),
               )
             ],
           ),
@@ -49,7 +51,7 @@ class _InputState extends State<Input> {
                 color: Colors.grey.withOpacity(0.3),
                 spreadRadius: 2,
                 blurRadius: 1,
-                offset: Offset(0, 0),
+                offset: const Offset(0, 0),
               ),
             ],
           ),
@@ -63,6 +65,10 @@ class _InputState extends State<Input> {
               ),
               prefixIcon: Image.asset(widget.icon),
               hintText: widget.hintText,
+              hintStyle: const TextStyle(
+                  color: Color(HINT_TEXT),
+                  fontWeight: FontWeight.bold // set the color of the hint text
+                  ),
               suffixIcon: type == 'password'
                   ? GestureDetector(
                       onTap: () {
@@ -74,7 +80,7 @@ class _InputState extends State<Input> {
                         _obscureText ? Icons.visibility_off : Icons.visibility,
                         semanticLabel:
                             _obscureText ? 'show password' : 'hide password',
-                        color: Color(0xFF5CB270),
+                        color: const Color(PRIMARY_COLOR),
                       ),
                     )
                   : null,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seniorplus/constants/colors.dart';
 
 class TitleName extends StatelessWidget {
   final String text;
@@ -15,7 +16,7 @@ class TitleName extends StatelessWidget {
       text,
       style: TextStyle(
           fontWeight: FontWeight.bold,
-          color: Color(0xFF5CB270),
+          color: Color(PRIMARY_COLOR),
           fontSize: size),
       textAlign: TextAlign.center,
     );

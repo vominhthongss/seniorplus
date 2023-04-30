@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'widgets/splash-screen.dart';
+import 'screens/splash-screen.dart';
 
 void main() {
   runApp(const MyApp());

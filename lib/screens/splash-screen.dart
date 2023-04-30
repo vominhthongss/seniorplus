@@ -7,7 +7,7 @@ import 'package:seniorplus/screens/sign-up-screen.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/description.dart';
 import 'package:seniorplus/widgets/title-name.dart';
-import '../screens/home-screen.dart';
+import 'home-screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seniorplus/constants/colors.dart';
 
 class Button extends StatelessWidget {
   final String text;
@@ -22,7 +23,7 @@ class Button extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           stops: [0.045, 1.0],
-          colors: [Color(0xFF5CB270), Color(0xFF88CD5E)],
+          colors: [Color(PRIMARY_COLOR), Color(SECOND_COLOR)],
         ),
       ),
       child: ElevatedButton(

@@ -1,0 +1,3 @@
+const PRIMARY_COLOR = 0xFF5CB270;
+const SECOND_COLOR = 0xFF88CD5E;
+const HINT_TEXT = 0xffb8b8b8;

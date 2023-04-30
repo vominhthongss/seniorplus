@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:seniorplus/constants/colors.dart';
 
 class Description extends StatelessWidget {
   final String text;
@@ -12,7 +13,7 @@ class Description extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        color: Color(0xFF5CB270),
+        color: Color(PRIMARY_COLOR),
         fontSize: 16,
       ),
       textAlign: TextAlign.center,
