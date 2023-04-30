@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorplus/constants/colors.dart';
+import 'package:seniorplus/widgets/shader-text.dart';
 
 class Input extends StatefulWidget {
   final String icon;
@@ -34,11 +35,11 @@ class _InputState extends State<Input> {
           padding: const EdgeInsets.only(bottom: 10),
           child: Row(
             children: [
-              Text(
-                label,
-                textAlign: TextAlign.start,
-                style:
-                    const TextStyle(color: Color(PRIMARY_COLOR), fontSize: 16),
+              ShaderText(
+                text: label,
+                size: 16,
+                fontBold: false,
+                center: false,
               )
             ],
           ),

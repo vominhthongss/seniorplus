@@ -4,6 +4,7 @@ import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/input.dart';
 import 'package:dio/dio.dart';
+import 'package:seniorplus/widgets/shader-text.dart';
 import 'package:seniorplus/widgets/title-name.dart';
 
 import '../main.dart';
@@ -45,7 +46,12 @@ class _SignInScreenState extends State<SignInScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const TitleName(text: 'Đăng nhập', size: 18),
+                const ShaderText(
+                  text: 'Đăng nhập',
+                  size: 18,
+                  fontBold: true,
+                  center: false,
+                ),
                 const SizedBox(height: 16),
                 Input(
                   hintText: 'Nhập email',
@@ -98,7 +104,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
                     Text('Đã có sẵn tài khoản? '),
-                    TitleName(text: 'Đăng nhập', size: 16)
+                    ShaderText(
+                      text: 'Đăng nhập',
+                      size: 16,
+                      fontBold: true,
+                      center: false,
+                    )
                   ],
                 ),
               ],

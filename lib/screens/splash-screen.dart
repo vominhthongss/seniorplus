@@ -6,6 +6,7 @@ import 'package:seniorplus/screens/sign-in-screen.dart';
 import 'package:seniorplus/screens/sign-up-screen.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/description.dart';
+import 'package:seniorplus/widgets/shader-text.dart';
 import 'package:seniorplus/widgets/title-name.dart';
 import 'home-screen.dart';
 
@@ -49,13 +50,20 @@ class _SplashScreenState extends State<SplashScreen> {
               Image.asset('assets/images/logo.png'),
               Container(
                   margin: const EdgeInsets.only(top: 50),
-                  child: const TitleName(
-                      text: 'Welcome to Senior Plus!', size: 24)),
+                  child: const ShaderText(
+                    text: 'Welcome to Senior Plus!',
+                    size: 24,
+                    fontBold: true,
+                    center: false,
+                  )),
               Container(
                 padding: const EdgeInsets.fromLTRB(100, 50, 100, 50),
                 child: const Description(
-                    text:
-                        'To facailitate and improve the care of the elderly issimple'),
+                  text:
+                      'To facailitate and improve the care of the elderly issimple',
+                  center: false,
+                  primary: true,
+                ),
               ),
               Image.asset('assets/images/symbol.png'),
               Container(

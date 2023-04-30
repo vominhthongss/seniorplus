@@ -4,6 +4,7 @@ import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/input.dart';
 import 'package:dio/dio.dart';
+import 'package:seniorplus/widgets/shader-text.dart';
 import 'package:seniorplus/widgets/title-name.dart';
 
 import '../main.dart';
@@ -45,7 +46,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const TitleName(text: 'Đăng ký', size: 18),
+                const ShaderText(
+                  text: 'Đăng ký',
+                  size: 18,
+                  fontBold: true,
+                  center: false,
+                ),
                 const SizedBox(height: 16),
                 Input(
                   hintText: 'Nhập email',
@@ -79,9 +85,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    TitleName(text: 'Terms & Conditions', size: 13),
+                    ShaderText(
+                      text: 'Terms & Conditions',
+                      size: 13,
+                      fontBold: true,
+                      center: false,
+                    ),
                     Text(' and '),
-                    TitleName(text: 'Privacy Policy', size: 13)
+                    ShaderText(
+                      text: 'Privacy Policy',
+                      size: 13,
+                      fontBold: true,
+                      center: false,
+                    )
                   ],
                 ),
                 const SizedBox(height: 30),
@@ -120,7 +136,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
                     Text('Đã có sẵn tài khoản? '),
-                    TitleName(text: 'Đăng nhập', size: 16)
+                    ShaderText(
+                      text: 'Đăng nhập',
+                      size: 16,
+                      fontBold: true,
+                      center: false,
+                    )
                   ],
                 ),
               ],
