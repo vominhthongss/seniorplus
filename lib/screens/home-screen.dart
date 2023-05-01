@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorplus/constants/colors.dart';
+import 'package:seniorplus/widgets/day.dart';
+import 'package:seniorplus/widgets/description.dart';
 import 'package:seniorplus/widgets/input.dart';
 import 'package:seniorplus/widgets/panel-button.dart';
 import 'package:seniorplus/widgets/shader-text.dart';
@@ -86,6 +88,95 @@ class HomeScreen extends StatelessWidget {
                           detail: true,
                           description:
                               'Cẩm nang hướng dẫn chăm sóc người cao tuổi tại nhà',
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: Row(
+                      children: const [
+                        ShaderText(
+                            text: 'Lịch trình sắp đến',
+                            size: 16,
+                            fontBold: true,
+                            center: false),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                    child: Row(
+                      children: const [
+                        Description(
+                          text: 'Tháng 2',
+                          center: false,
+                          primary: false,
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Day(
+                          day: 'Mon',
+                          date: '17',
+                          onPressed: () {},
+                          today: true,
+                          width: widthScreen / 10,
+                        ),
+                        Day(
+                          day: 'Mon',
+                          date: '17',
+                          onPressed: () {},
+                          today: false,
+                          width: widthScreen / 10,
+                        ),
+                        Day(
+                          day: 'Tue',
+                          date: '18',
+                          onPressed: () {},
+                          today: false,
+                          width: widthScreen / 10,
+                        ),
+                        Day(
+                          day: 'Wes',
+                          date: '19',
+                          onPressed: () {},
+                          today: false,
+                          width: widthScreen / 10,
+                        ),
+                        Day(
+                          day: 'Thu',
+                          date: '20',
+                          onPressed: () {},
+                          today: false,
+                          width: widthScreen / 10,
+                        ),
+                        Day(
+                          day: 'Fri',
+                          date: '21',
+                          onPressed: () {},
+                          today: false,
+                          width: widthScreen / 10,
+                        ),
+                        Day(
+                          day: 'Sat',
+                          date: '22',
+                          onPressed: () {},
+                          today: false,
+                          width: widthScreen / 10,
+                        ),
+                        Day(
+                          day: 'Sun',
+                          date: '23',
+                          onPressed: () {},
+                          today: false,
+                          width: widthScreen / 10,
                         ),
                       ],
                     ),
