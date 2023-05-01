@@ -92,7 +92,7 @@ class Day extends StatelessWidget {
                   padding: EdgeInsets.all(8.0),
                   child: Text(
                     date,
-                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    style: TextStyle(color: Colors.black, fontSize: 16),
                   ),
                 ),
               ),

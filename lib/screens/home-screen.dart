@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorplus/constants/colors.dart';
+import 'package:seniorplus/screens/schedule-medication-screen.dart';
+import 'package:seniorplus/screens/sign-in-screen.dart';
 import 'package:seniorplus/widgets/day.dart';
 import 'package:seniorplus/widgets/description.dart';
 import 'package:seniorplus/widgets/input.dart';
@@ -58,6 +60,7 @@ class HomeScreen extends StatelessWidget {
                         height: 100,
                         detail: false,
                         description: '',
+                        navigateScreen: SignInScreen(),
                       ),
                       const SizedBox(
                         width: 40,
@@ -69,6 +72,7 @@ class HomeScreen extends StatelessWidget {
                         height: 100,
                         detail: false,
                         description: '',
+                        navigateScreen: ScheduleMedicationScreen(),
                       )
                     ],
                   ),
@@ -85,6 +89,7 @@ class HomeScreen extends StatelessWidget {
                         height: 150,
                         width: widthScreen - 55,
                         detail: true,
+                        navigateScreen: SignInScreen(),
                         description:
                             'Cẩm nang hướng dẫn chăm sóc người cao tuổi tại nhà',
                       ),
