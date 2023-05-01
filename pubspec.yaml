@@ -76,6 +76,10 @@ flutter:
       - assets/images/Order.png
       - assets/images/DrinkDrug.png
       - assets/images/Book.png
+      - assets/images/Survey.png
+      - assets/images/WallClock.png
+      - assets/images/Address.png
+      - assets/images/TimeLine.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -6,6 +6,7 @@ import 'package:seniorplus/widgets/description.dart';
 import 'package:seniorplus/widgets/input.dart';
 import 'package:seniorplus/widgets/panel-button.dart';
 import 'package:seniorplus/widgets/shader-text.dart';
+import 'package:seniorplus/widgets/time-line-panel.dart';
 
 import '../main.dart';
 import '../widgets/customize-title.dart';
@@ -180,7 +181,40 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          child: Image.asset('assets/images/TimeLine.png'),
+                        ),
+                        Column(
+                          children: [
+                            SizedBox(
+                              width: 3 * widthScreen / 4 - 20,
+                              child: Padding(
+                                padding: const EdgeInsets.all(0.0),
+                                child: TimeLinePanel(
+                                  width: widthScreen,
+                                  text: 'Kiểm tra huyết áp',
+                                  image: 'assets/images/Survey.png',
+                                  fullName: 'Tran Thanh Bach',
+                                  height: 70,
+                                  time: '10:30',
+                                  address:
+                                      '01 Trần Khánh Dư, Bạch Đằng, Hai Bà Trưng, Hà Nội',
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
