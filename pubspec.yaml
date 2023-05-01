@@ -80,6 +80,8 @@ flutter:
       - assets/images/WallClock.png
       - assets/images/Address.png
       - assets/images/TimeLine.png
+      - assets/images/Calendar.png
+      - assets/images/Dots.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

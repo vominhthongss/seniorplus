@@ -118,6 +118,12 @@ class TimeLinePanel extends StatelessWidget {
                   ),
                 ],
               ),
+              InkWell(
+                onTap: () {
+                  // add functionality here when the image button is tapped
+                },
+                child: Image.asset('assets/images/Dots.png'),
+              )
             ],
           ),
         ),
