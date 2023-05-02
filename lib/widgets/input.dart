@@ -4,7 +4,7 @@ import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/widgets/shader-text.dart';
 
 class Input extends StatefulWidget {
-  final String icon;
+  final String? icon;
   final String hintText;
   final String label;
   final String type;
@@ -64,7 +64,8 @@ class _InputState extends State<Input> {
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide.none,
               ),
-              prefixIcon: Image.asset(widget.icon),
+              prefixIcon:
+                  widget.icon != null ? Image.asset(widget.icon!) : null,
               hintText: widget.hintText,
               hintStyle: const TextStyle(
                   color: Color(HINT_TEXT),
