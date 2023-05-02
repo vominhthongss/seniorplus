@@ -86,6 +86,10 @@ flutter:
       - assets/images/Name.png
       - assets/images/ChangeUser.png
       - assets/images/Edit.png
+      - assets/images/HandPill.png
+      - assets/images/TimeSpan.png
+      - assets/images/Plus.png
+      - assets/images/CalendarSchedule.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

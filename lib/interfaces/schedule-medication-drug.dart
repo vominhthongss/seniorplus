@@ -8,4 +8,10 @@ class IScheduleMedicationDrug {
       required this.drugName,
       required this.content,
       required this.quantity});
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'drugName': drugName,
+        'content': content,
+        'quantity': quantity
+      };
 }
