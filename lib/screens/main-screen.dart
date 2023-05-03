@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorplus/screens/home-screen.dart';
+import 'package:seniorplus/screens/notification-screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     Text('Search Screen'),
-    Text('Profile Screen'),
+    NotificationScreen(),
     Text('User Screen'),
   ];
 
@@ -29,8 +30,15 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: IndexedStack(
+          // dùng ngăn xếp lưu lại
+          index: _selectedIndex,
+          children: _widgetOptions,
+        ),
       ),
+      // body: Center(
+      //   child: _widgetOptions.elementAt(_selectedIndex),
+      // ),
       bottomNavigationBar: Container(
         color: Colors.black,
         child: Padding(

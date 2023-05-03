@@ -1,10 +1,13 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/interfaces/schedule-medication-drug.dart';
 import 'package:seniorplus/interfaces/schedule-medication-time.dart';
+import 'package:seniorplus/interfaces/test.dart';
+import 'package:seniorplus/interfaces/user.dart';
 import 'package:seniorplus/widgets/border-button.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/day-button.dart';
@@ -22,6 +25,14 @@ class ScheduleMedicationScreen extends StatefulWidget {
 }
 
 class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
+  final List<IUser> users = [
+    IUser(fullName: 'Bách', sex: 'Nam', age: '70'),
+    IUser(fullName: 'Khoa', sex: 'Nam', age: '70'),
+    IUser(fullName: 'Toàn', sex: 'Nam', age: '70'),
+    IUser(fullName: 'Thư', sex: 'Nữ', age: '70')
+  ];
+  late List<IUser> user = [users[0]];
+
   final List<IScheduleMedicationDrug> drugs = <IScheduleMedicationDrug>[
     IScheduleMedicationDrug(
         id: '1', drugName: 'Panadol', content: '20', quantity: '1'),
@@ -33,7 +44,56 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
     IScheduleMedicationTime(id: '2', time: '16:40'),
   ];
   final List<String> days = [];
+
   final _controller = TextEditingController();
+
+  final dio = Dio();
+
+  // Future<List<Test>> fetchData() async {
+  //   final response = await dio
+  //       .get('https://seniorplus-2ad6e-default-rtdb.firebaseio.com/test.json');
+  //   if (response.statusCode == 200) {
+  //     final List<dynamic> data = response.data;
+  //     return data.map((item) => Test.fromJson(item)).toList();
+  //   } else {
+  //     throw Exception('Failed to load data');
+  //   }
+  // }
+
+  // void postData() async {
+  //   try {
+  //     final response = await dio.post(
+  //       'https://seniorplus-2ad6e-default-rtdb.firebaseio.com/test.json',
+  //       data: {
+  //         "2": {"key": "value 3"}
+  //       },
+  //     );
+  //     if (response.statusCode == 200) {
+  //       print(response);
+  //       print('Data posted successfully');
+  //     } else {
+  //       throw Exception('Failed to post data');
+  //     }
+  //   } catch (e) {
+  //     print('Error posting data: $e');
+  //   }
+  // }
+
+  void saveSchedule(items) async {
+    try {
+      final response = await dio.post(
+        'https://seniorplus-2ad6e-default-rtdb.firebaseio.com/schedule.json',
+        data: items,
+      );
+      if (response.statusCode == 200) {
+        print('Data posted successfully');
+      } else {
+        throw Exception('Failed to post data');
+      }
+    } catch (e) {
+      print('Error posting data: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +103,36 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            // FutureBuilder<List<Test>>(
+            //   future: fetchData(),
+            //   builder: (context, snapshot) {
+            //     if (snapshot.hasData) {
+            //       // If the data is available, build the ListView.
+            //       final data = snapshot.data!;
+            //       return SizedBox(
+            //         height: 100,
+            //         child: ListView.builder(
+            //           itemCount: data.length,
+            //           itemBuilder: (context, index) {
+            //             // Build a ListTile for each item in the list.
+            //             final item = data[index];
+            //             return Text(item.key);
+            //           },
+            //         ),
+            //       );
+            //     } else if (snapshot.hasError) {
+            //       // If there's an error, display an error message.
+            //       return Center(
+            //         child: Text('Failed to load data: ${snapshot.error}'),
+            //       );
+            //     } else {
+            //       // If the data is not yet available, display a loading spinner.
+            //       return Center(
+            //         child: CircularProgressIndicator(),
+            //       );
+            //     }
+            //   },
+            // ),
             Container(
               height: 220,
               decoration: const BoxDecoration(
@@ -85,9 +175,9 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
                       ],
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.fromLTRB(15, 30, 15, 0),
-                    child: InputSelect(controller: null),
+                    child: InputSelect(user: user, users: users),
                   )
                 ],
               ),
@@ -710,6 +800,7 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
                           text: 'Lưu',
                           delete: false,
                           onPressed: () {
+                            print(user[0]);
                             String jsonDrugs = jsonEncode(
                                 drugs.map((d) => d.toJson()).toList());
                             print(jsonDrugs);
@@ -717,6 +808,13 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
                                 times.map((t) => t.toJson()).toList());
                             print(jsonTimes);
                             print(jsonEncode(days));
+                            final items = {
+                              "user": user[0],
+                              "drugs": drugs.map((d) => d.toJson()).toList(),
+                              "times": times.map((t) => t.toJson()).toList(),
+                              "days": days,
+                            };
+                            saveSchedule(items);
                           },
                         ),
                       ),

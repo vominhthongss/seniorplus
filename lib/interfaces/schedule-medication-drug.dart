@@ -14,4 +14,13 @@ class IScheduleMedicationDrug {
         'content': content,
         'quantity': quantity
       };
+
+  // factory IScheduleMedicationDrug.fromJson(Map<String, dynamic> json) {
+  //   return IScheduleMedicationDrug(
+  //     id: json['id'],
+  //     drugName: json['drugName'],
+  //     content: json['content'],
+  //     quantity: json['quantity'],
+  //   );
+  // }
 }
