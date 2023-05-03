@@ -83,10 +83,10 @@ class _InputSelectState extends State<InputSelect> {
                               return AlertDialog(
                                 title: Text('Chọn bệnh nhân'),
                                 content: Container(
-                                  height: 300,
+                                  height: 150,
                                   child: SingleChildScrollView(
                                     child: SizedBox(
-                                      height: 300,
+                                      height: 150,
                                       width: 500,
                                       child: ListView.builder(
                                         itemCount: users.length,
@@ -100,7 +100,16 @@ class _InputSelectState extends State<InputSelect> {
                                               });
                                               Navigator.of(context).pop();
                                             },
-                                            child: Text(users[index].fullName),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(4.0),
+                                              child: Text(
+                                                users[index].fullName,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18),
+                                              ),
+                                            ),
                                           );
                                         },
                                       ),

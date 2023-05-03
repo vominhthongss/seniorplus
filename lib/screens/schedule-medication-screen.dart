@@ -26,10 +26,10 @@ class ScheduleMedicationScreen extends StatefulWidget {
 
 class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
   final List<IUser> users = [
-    IUser(fullName: 'Bách', sex: 'Nam', age: '70'),
-    IUser(fullName: 'Khoa', sex: 'Nam', age: '70'),
-    IUser(fullName: 'Toàn', sex: 'Nam', age: '70'),
-    IUser(fullName: 'Thư', sex: 'Nữ', age: '70')
+    IUser(fullName: 'Trần Thanh Bách', sex: 'Nam', age: '51'),
+    IUser(fullName: 'Nguyễn Đăng Khoa', sex: 'Nam', age: '67'),
+    IUser(fullName: 'Lý Văn Toàn', sex: 'Nam', age: '96'),
+    IUser(fullName: 'Võ Anh Thư', sex: 'Nữ', age: '71')
   ];
   late List<IUser> user = [users[0]];
 

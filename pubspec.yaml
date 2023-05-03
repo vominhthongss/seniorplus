@@ -90,6 +90,13 @@ flutter:
       - assets/images/TimeSpan.png
       - assets/images/Plus.png
       - assets/images/CalendarSchedule.png
+      - assets/images/ClockSche.png
+      - assets/images/Hide.png
+      - assets/images/Show.png
+      - assets/images/DrugScheTabActive.png
+      - assets/images/CalendarScheTabActive.png
+      - assets/images/DrugScheTab.png
+      - assets/images/CalendarScheTab.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

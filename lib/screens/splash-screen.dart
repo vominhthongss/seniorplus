@@ -22,12 +22,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Wait for 3 seconds before navigating to HomeScreen
-    Timer(const Duration(seconds: 0), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const MainScreen()),
-      );
-    });
+    // Timer(const Duration(seconds: 3), () {
+    //   Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => const SignUpScreen()),
+    //   );
+    // });
   }
 
   @override

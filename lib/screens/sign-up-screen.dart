@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorplus/constants/colors.dart';
+import 'package:seniorplus/screens/sign-in-screen.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/input.dart';
 import 'package:dio/dio.dart';
@@ -103,10 +104,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 30),
                 Button(
                   text: 'Đăng ký',
-                  onPressed: () async {
-                    final email = _emailController.text;
-                    final password = _passwordController.text;
-                    await signUp(email, password);
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInScreen()),
+                    );
                   },
                 ),
                 const SizedBox(height: 50),
