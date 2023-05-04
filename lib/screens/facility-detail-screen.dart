@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:seniorplus/interfaces/health-department.dart';
 import 'package:seniorplus/interfaces/hospital.dart';
 import 'package:seniorplus/widgets/button.dart';
+import 'package:seniorplus/widgets/health-service-item.dart';
 import 'package:seniorplus/widgets/hospital-item.dart';
 import 'package:seniorplus/widgets/shader-text.dart';
 
@@ -160,29 +162,58 @@ class _FacilityDetailScreenState extends State<FacilityDetailScreen> {
   }
 }
 
-class Tab3 extends StatelessWidget {
+class Tab3 extends StatefulWidget {
   const Tab3({
     super.key,
   });
 
+  @override
+  State<Tab3> createState() => _Tab3State();
+}
+
+class _Tab3State extends State<Tab3> {
   @override
   Widget build(BuildContext context) {
     return Text('c');
   }
 }
 
-class Tab2 extends StatelessWidget {
+class Tab2 extends StatefulWidget {
   const Tab2({
     super.key,
   });
 
   @override
+  State<Tab2> createState() => _Tab2State();
+}
+
+class _Tab2State extends State<Tab2> {
+  final List<HealthService> healthDepartments = [
+    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+  ];
+  @override
   Widget build(BuildContext context) {
-    return Text('b');
+    return Column(
+      children: [
+        Text('Danh sách dịch vụ: '),
+        SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: ListView.builder(
+              itemCount: healthDepartments.length,
+              itemBuilder: (context, index) {
+                final item = healthDepartments[index];
+                return HealthServiceItem(item: item);
+              }),
+        )
+      ],
+    );
   }
 }
 
-class Tab1 extends StatelessWidget {
+class Tab1 extends StatefulWidget {
   final Hospital hospital;
   const Tab1({
     super.key,
@@ -190,13 +221,18 @@ class Tab1 extends StatelessWidget {
   });
 
   @override
+  State<Tab1> createState() => _Tab1State();
+}
+
+class _Tab1State extends State<Tab1> {
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HospitalItem(hospital: hospital, border: false),
+            HospitalItem(hospital: widget.hospital, border: false),
           ],
         ),
         Row(
@@ -281,7 +317,7 @@ class Tab1 extends StatelessWidget {
               child: Container(
                 width: MediaQuery.of(context).size.width - 80,
                 child: Text(
-                  hospital.description!,
+                  widget.hospital.description!,
                   textAlign: TextAlign.justify,
                 ),
               ),
