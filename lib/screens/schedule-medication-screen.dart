@@ -99,6 +99,7 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
   Widget build(BuildContext context) {
     double widthScreen = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(

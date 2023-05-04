@@ -40,6 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: Colors.white,
         child: Center(

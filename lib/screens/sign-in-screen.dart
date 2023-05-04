@@ -39,6 +39,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Center(
           child: Padding(

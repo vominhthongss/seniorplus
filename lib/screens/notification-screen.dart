@@ -29,7 +29,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
         };
         schedules.add(schedule);
       }
-      print(schedules);
       return schedules;
     } else {
       throw Exception('Failed to load data');
@@ -39,6 +38,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Container(

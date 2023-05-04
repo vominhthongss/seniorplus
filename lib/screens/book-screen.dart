@@ -27,6 +27,7 @@ class _BookScreenState extends State<BookScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(children: [
         Container(
           height: 120,
