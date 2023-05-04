@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:seniorplus/interfaces/doctor.dart';
 import 'package:seniorplus/interfaces/health-department.dart';
 import 'package:seniorplus/interfaces/hospital.dart';
+import 'package:seniorplus/screens/info-book-screen.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/doctor-item.dart';
 import 'package:seniorplus/widgets/health-service-item.dart';
@@ -231,6 +232,42 @@ class _Tab2State extends State<Tab2> {
     const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
     const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
     const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -288,9 +325,21 @@ class _Tab1State extends State<Tab1> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                width: 150,
-                height: 32,
-                child: Button(text: 'Đặt lịch khám', onPressed: () {}))
+              width: 150,
+              height: 32,
+              child: Button(
+                text: 'Đặt lịch khám',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          InfoBookScreen(hospital: widget.hospital),
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
         Padding(
