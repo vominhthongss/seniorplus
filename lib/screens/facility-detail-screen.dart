@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:seniorplus/interfaces/doctor.dart';
 import 'package:seniorplus/interfaces/health-department.dart';
 import 'package:seniorplus/interfaces/hospital.dart';
 import 'package:seniorplus/widgets/button.dart';
+import 'package:seniorplus/widgets/doctor-item.dart';
 import 'package:seniorplus/widgets/health-service-item.dart';
 import 'package:seniorplus/widgets/hospital-item.dart';
 import 'package:seniorplus/widgets/shader-text.dart';
@@ -172,9 +174,45 @@ class Tab3 extends StatefulWidget {
 }
 
 class _Tab3State extends State<Tab3> {
+  final List<Doctor> doctors = [
+    const Doctor(
+      hospital: 'Bệnh viện Hữu Nghị Việt Xô',
+      name: 'Nguyễn Trần Toản',
+      job: 'BS. TS',
+      department: 'Khoa Nội',
+    )
+  ];
   @override
   Widget build(BuildContext context) {
-    return Text('c');
+    return Column(
+      children: [
+        Row(
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Text(
+                    'Danh sách bác sĩ: (${doctors.length})',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: ListView.builder(
+            itemCount: doctors.length,
+            itemBuilder: (context, index) {
+              final item = doctors[index];
+              return DoctorItem(item: item);
+            },
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -189,25 +227,36 @@ class Tab2 extends StatefulWidget {
 
 class _Tab2State extends State<Tab2> {
   final List<HealthService> healthDepartments = [
-    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
-    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
-    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
-    HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
+    const HealthService('Khám Nội Khoa (Lão Khoa)', '50.000 VND', '5'),
   ];
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Danh sách dịch vụ: '),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Text(
+                'Danh sách dịch vụ: (${healthDepartments.length})',
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
         SizedBox(
           height: MediaQuery.of(context).size.height,
           child: ListView.builder(
-              itemCount: healthDepartments.length,
-              itemBuilder: (context, index) {
-                final item = healthDepartments[index];
-                return HealthServiceItem(item: item);
-              }),
-        )
+            itemCount: healthDepartments.length,
+            itemBuilder: (context, index) {
+              final item = healthDepartments[index];
+              return HealthServiceItem(item: item);
+            },
+          ),
+        ),
       ],
     );
   }
@@ -261,7 +310,10 @@ class _Tab1State extends State<Tab1> {
                       width: MediaQuery.of(context).size.width / 4,
                       child: Center(
                           child: Column(
-                        children: [Text('Lượt đặt khám'), Text('123 lượt')],
+                        children: const [
+                          Text('Lượt đặt khám'),
+                          Text('123 lượt')
+                        ],
                       ))),
                   Container(
                     width: MediaQuery.of(context).size.width / 4,
@@ -273,7 +325,7 @@ class _Tab1State extends State<Tab1> {
                     ),
                     child: Center(
                         child: Column(
-                      children: [Text('Lượt tư vấn'), Text('23 lượt')],
+                      children: const [Text('Lượt tư vấn'), Text('23 lượt')],
                     )),
                   ),
                   Container(
@@ -285,8 +337,8 @@ class _Tab1State extends State<Tab1> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('5'),
-                              SizedBox(
+                              const Text('5'),
+                              const SizedBox(
                                 width: 4,
                               ),
                               Image.asset('assets/images/star.png')

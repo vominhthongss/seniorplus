@@ -102,6 +102,11 @@ flutter:
       - assets/images/search.png
       - assets/images/star.png
       - assets/images/Next.png
+      - assets/images/AveragePrice.png
+      - assets/images/SmallStar.png
+      - assets/images/Avatar.png
+      - assets/images/SystemDiagnostic.png
+      - assets/images/HospitalLocation.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
