@@ -6,12 +6,16 @@ class ShaderText extends StatelessWidget {
   final double size;
   final bool fontBold;
   final bool center;
+  final bool? italic;
+  final bool? underline;
   const ShaderText({
     super.key,
     required this.text,
     required this.size,
     required this.fontBold,
     required this.center,
+    this.italic,
+    this.underline,
   });
 
   @override
@@ -29,6 +33,8 @@ class ShaderText extends StatelessWidget {
           fontSize: size,
           fontWeight: fontBold ? FontWeight.bold : null,
           color: Colors.white,
+          fontStyle: italic == true ? FontStyle.italic : null,
+          decoration: underline == true ? TextDecoration.underline : null,
           // This color will be ignored
         ),
         textAlign: center == true ? TextAlign.center : null,

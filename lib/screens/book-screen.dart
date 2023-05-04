@@ -18,11 +18,13 @@ class _BookScreenState extends State<BookScreen> {
     Hospital(
         'Bệnh viện Hữu Nghị Việt Xô',
         '01 Trần Khánh Dư, Bạch Đằng, Hai Bà Trưng, Hà Nội',
-        'https://suchcare.com/wp-content/uploads/2022/08/benh-vien-huu-nghi-viet-xo.jpg'),
+        'https://suchcare.com/wp-content/uploads/2022/08/benh-vien-huu-nghi-viet-xo.jpg',
+        'Bệnh viện Hữu Nghị là một bệnh viện công lập đa khoa lớn ở Hà Nội, Việt Nam. Tiền thân của bệnh viện là "Bệnh viện Hữu Nghị Việt – Xô", được thành lập năm 1958. Đây là bệnh viện đa khoa hoàn chỉnh loại I, có nhiệm vụ khám chữa bệnh cho cán bộ cấp trung cao trong cơ quan dân chính Đảng ở các tính phía bắc.'),
     Hospital(
         'Bệnh viện Bạch Mai',
         'số 78 đường Giải Phóng, phường Phương Mai, quận Đống Đa, Hà Nội',
-        'https://cdnimg.vietnamplus.vn/uploaded/lepz/2022_01_01/benh_vien_bach_mai.jpg')
+        'https://cdnimg.vietnamplus.vn/uploaded/lepz/2022_01_01/benh_vien_bach_mai.jpg',
+        'Bệnh viện Bạch Mai là một bệnh viện công lập đa khoa lớn ở Hà Nội, Việt Nam. Tiền thân của bệnh viện là "Bệnh viện Bạch Mai", được thành lập năm 1958. Đây là bệnh viện đa khoa hoàn chỉnh loại I, có nhiệm vụ khám chữa bệnh cho cán bộ cấp trung cao trong cơ quan dân chính Đảng ở các tính phía bắc.')
   ];
   @override
   Widget build(BuildContext context) {
@@ -65,14 +67,17 @@ class _BookScreenState extends State<BookScreen> {
           ),
         ),
         Container(
-          color: Colors.white,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+          ),
           width: MediaQuery.of(context).size.width,
           transform: Matrix4.translationValues(0.0, -20.0, 0.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(8, 30, 8, 8),
                   child: SizedBox(
                     height: 40,
                     child: TextField(
@@ -144,7 +149,7 @@ class _BookScreenState extends State<BookScreen> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
                   child: SizedBox(
-                    height: MediaQuery.of(context).size.height - 224,
+                    height: MediaQuery.of(context).size.height - 232,
                     child: ListView.builder(
                       itemCount: hospitals.length,
                       itemBuilder: (context, index) {
@@ -153,6 +158,7 @@ class _BookScreenState extends State<BookScreen> {
                           padding: const EdgeInsets.only(bottom: 20),
                           child: HospitalItem(
                             hospital: hospital,
+                            border: true,
                           ),
                         );
                       },
