@@ -16,12 +16,14 @@ class HospitalItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => FacilityDetailScreen(hospital: hospital),
-          ),
-        );
+        if (border) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => FacilityDetailScreen(hospital: hospital),
+            ),
+          );
+        }
       },
       child: Column(
         children: [

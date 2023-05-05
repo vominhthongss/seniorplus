@@ -78,6 +78,7 @@ flutter:
       - assets/images/Book.png
       - assets/images/Survey.png
       - assets/images/WallClock.png
+      - assets/images/WallClock2.png
       - assets/images/Address.png
       - assets/images/TimeLine.png
       - assets/images/Calendar.png
@@ -107,6 +108,15 @@ flutter:
       - assets/images/Avatar.png
       - assets/images/SystemDiagnostic.png
       - assets/images/HospitalLocation.png
+      - assets/images/DownArrow.png
+      - assets/images/Camera.png
+      - assets/images/Line.png
+      - assets/images/AddAdministrator.png
+      - assets/images/Treatment.png
+      - assets/images/Hospital.png
+      - assets/images/MagneticCard.png
+      - assets/images/Check.png
+      - assets/images/QR.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
