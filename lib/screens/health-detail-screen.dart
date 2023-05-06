@@ -182,13 +182,13 @@ class _HealthDetailScreenState extends State<HealthDetailScreen> {
                           });
                         },
                         child: index == 3
-                            ? ShaderText(
+                            ? const ShaderText(
                                 text: 'Đơn thuốc',
                                 size: 16,
                                 fontBold: true,
                                 underline: true,
                                 center: false)
-                            : Text(
+                            : const Text(
                                 'Đơn thuốc',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
@@ -202,13 +202,9 @@ class _HealthDetailScreenState extends State<HealthDetailScreen> {
                       : index == 1
                           ? Tab2()
                           : index == 2
-                              ? Column(
-                                  children: [Text('tab 3')],
-                                )
+                              ? Tab3()
                               : index == 3
-                                  ? Column(
-                                      children: [Text('tab 4')],
-                                    )
+                                  ? Tab4()
                                   : null,
                 )
               ],
@@ -220,8 +216,115 @@ class _HealthDetailScreenState extends State<HealthDetailScreen> {
   }
 }
 
+class Tab4 extends StatelessWidget {
+  const Tab4({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            children: [
+              Text('Đơn thuốc ngày 23/2/2022'),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 10, 12, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FileItem(
+                title: 'Đơn thuốc.pdf',
+                date: '23/5/2022',
+                image: 'assets/images/None.png',
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
 class Tab2 extends StatelessWidget {
   const Tab2({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 10, 12, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FileItem(
+                title: 'X-quang phổi.pdf',
+                date: '23/5/2022',
+                image: 'assets/images/None.png',
+              ),
+              FileItem(
+                title: 'X-quang phổi.pdf',
+                date: '23/5/2022',
+                image: 'assets/images/None.png',
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class FileItem extends StatelessWidget {
+  final String title;
+  final String date;
+  final String image;
+  const FileItem({
+    super.key,
+    required this.title,
+    required this.date,
+    required this.image,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: MediaQuery.of(context).size.width / 2 - 30,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.3),
+                spreadRadius: 2,
+                blurRadius: 1,
+                offset: const Offset(0, 0),
+              ),
+            ],
+            borderRadius: BorderRadius.circular(8)),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('    ' + title),
+              Image.asset('assets/images/None.png'),
+              Text('    ' + 'thêm vào: ' + date),
+            ],
+          ),
+        ));
+  }
+}
+
+class Tab3 extends StatelessWidget {
+  const Tab3({
     super.key,
   });
 
@@ -233,71 +336,88 @@ class Tab2 extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ImageCare(dataList: list1),
+          child: HistoryCare(title: 'Tiền sử dị ứng', dataList: list1),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ImageCare(dataList: list2),
+          child: HistoryCare(title: 'Tiền sử bệnh', dataList: list2),
         ),
       ],
     );
   }
 }
 
-class ImageCare extends StatelessWidget {
+class HistoryCare extends StatelessWidget {
+  final String title;
   final List<String> dataList;
-  const ImageCare({
+  const HistoryCare({
     super.key,
     required this.dataList,
+    required this.title,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.3),
-              spreadRadius: 2,
-              blurRadius: 1,
-              offset: const Offset(0, 0),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(8)),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
+    return Column(
+      children: [
+        Row(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                for (final item in dataList)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: (Text(
-                      '• ' + item,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: 60,
-                    height: 30,
-                    child: BorderButton(
-                        text: '',
-                        delete: false,
-                        border: false,
-                        icon: 'assets/images/Plus.png',
-                        onPressed: () {}),
-                  ),
-                )
-              ],
+            Text(
+              title,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ],
         ),
-      ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.3),
+                  spreadRadius: 2,
+                  blurRadius: 1,
+                  offset: const Offset(0, 0),
+                ),
+              ],
+              borderRadius: BorderRadius.circular(8)),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (final item in dataList)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: (Text(
+                          '• ' + item,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
+                      ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        width: 60,
+                        height: 30,
+                        child: BorderButton(
+                            text: '',
+                            delete: false,
+                            border: false,
+                            icon: 'assets/images/Plus.png',
+                            onPressed: () {}),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

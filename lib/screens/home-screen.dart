@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/screens/book-screen.dart';
+import 'package:seniorplus/screens/catalog-screen.dart';
 import 'package:seniorplus/screens/schedule-medication-screen.dart';
 import 'package:seniorplus/screens/sign-in-screen.dart';
 import 'package:seniorplus/widgets/day.dart';
@@ -90,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                         height: 150,
                         width: widthScreen - 55,
                         detail: true,
-                        navigateScreen: SignInScreen(),
+                        navigateScreen: CatalogScreen(),
                         description:
                             'Cẩm nang hướng dẫn chăm sóc người cao tuổi tại nhà',
                       ),

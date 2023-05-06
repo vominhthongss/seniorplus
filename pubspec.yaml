@@ -125,6 +125,14 @@ flutter:
       - assets/images/BMI.png
       - assets/images/Diabetes.png
       - assets/images/TallPerson.png
+      - assets/images/None.png
+      - assets/images/Down.png
+      - assets/images/FoodBar.png
+      - assets/images/HeartHealth.png
+      - assets/images/SupplementBottle.png
+      - assets/images/Question.png
+      - assets/images/Image1.png
+      - assets/images/Image2.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

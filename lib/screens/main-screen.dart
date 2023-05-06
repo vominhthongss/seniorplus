@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     HealthScreen(),
     NotificationScreen(),
-    Text('User Screen'),
+    Center(child: Text('User Screen')),
   ];
 
   void _onItemTapped(int index) {
