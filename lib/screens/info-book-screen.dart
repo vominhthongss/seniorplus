@@ -81,7 +81,6 @@ class _InfoBookScreenState extends State<InfoBookScreen> {
         service: servicesController.text,
         dateTime: datesController.text + ' ' + timesController.text,
         symptom: symptomController.text);
-    debugPrint("infoBook : ${infoBook.dateTime}", wrapWidth: 1024);
     Navigator.push(
       context,
       MaterialPageRoute(

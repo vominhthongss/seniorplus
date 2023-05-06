@@ -49,36 +49,6 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
 
   final dio = Dio();
 
-  // Future<List<Test>> fetchData() async {
-  //   final response = await dio
-  //       .get('https://seniorplus-2ad6e-default-rtdb.firebaseio.com/test.json');
-  //   if (response.statusCode == 200) {
-  //     final List<dynamic> data = response.data;
-  //     return data.map((item) => Test.fromJson(item)).toList();
-  //   } else {
-  //     throw Exception('Failed to load data');
-  //   }
-  // }
-
-  // void postData() async {
-  //   try {
-  //     final response = await dio.post(
-  //       'https://seniorplus-2ad6e-default-rtdb.firebaseio.com/test.json',
-  //       data: {
-  //         "2": {"key": "value 3"}
-  //       },
-  //     );
-  //     if (response.statusCode == 200) {
-  //       print(response);
-  //       print('Data posted successfully');
-  //     } else {
-  //       throw Exception('Failed to post data');
-  //     }
-  //   } catch (e) {
-  //     print('Error posting data: $e');
-  //   }
-  // }
-
   void saveSchedule(items) async {
     try {
       final response = await dio.post(
@@ -104,36 +74,6 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // FutureBuilder<List<Test>>(
-            //   future: fetchData(),
-            //   builder: (context, snapshot) {
-            //     if (snapshot.hasData) {
-            //       // If the data is available, build the ListView.
-            //       final data = snapshot.data!;
-            //       return SizedBox(
-            //         height: 100,
-            //         child: ListView.builder(
-            //           itemCount: data.length,
-            //           itemBuilder: (context, index) {
-            //             // Build a ListTile for each item in the list.
-            //             final item = data[index];
-            //             return Text(item.key);
-            //           },
-            //         ),
-            //       );
-            //     } else if (snapshot.hasError) {
-            //       // If there's an error, display an error message.
-            //       return Center(
-            //         child: Text('Failed to load data: ${snapshot.error}'),
-            //       );
-            //     } else {
-            //       // If the data is not yet available, display a loading spinner.
-            //       return Center(
-            //         child: CircularProgressIndicator(),
-            //       );
-            //     }
-            //   },
-            // ),
             Container(
               height: 220,
               decoration: const BoxDecoration(

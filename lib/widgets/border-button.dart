@@ -6,12 +6,14 @@ class BorderButton extends StatelessWidget {
   final String? icon;
   final bool delete;
   final VoidCallback onPressed;
+  final bool? border;
   const BorderButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.icon,
     required this.delete,
+    this.border,
   });
 
   @override
@@ -44,10 +46,12 @@ class BorderButton extends StatelessWidget {
                 stops: [0.045, 1.0],
                 colors: [Color(0xffF90707), Color(0xffED850A)],
               ),
-        border: Border.all(
-          color: Colors.white,
-          width: 3.0,
-        ),
+        border: border == false
+            ? null
+            : Border.all(
+                color: Colors.white,
+                width: 3.0,
+              ),
       ),
       child: ElevatedButton(
         onPressed: onPressed,

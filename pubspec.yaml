@@ -117,6 +117,14 @@ flutter:
       - assets/images/MagneticCard.png
       - assets/images/Check.png
       - assets/images/QR.png
+      - assets/images/Account.png
+      - assets/images/Avt.png
+      - assets/images/Avt2.png
+      - assets/images/DropofBlood.png
+      - assets/images/HeartwithPulse.png
+      - assets/images/BMI.png
+      - assets/images/Diabetes.png
+      - assets/images/TallPerson.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

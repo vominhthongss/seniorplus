@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:seniorplus/screens/health-screen.dart';
 import 'package:seniorplus/screens/home-screen.dart';
 import 'package:seniorplus/screens/notification-screen.dart';
 
@@ -15,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    Text('Search Screen'),
+    HealthScreen(),
     NotificationScreen(),
     Text('User Screen'),
   ];
