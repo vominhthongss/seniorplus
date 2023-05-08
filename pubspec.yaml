@@ -134,6 +134,11 @@ flutter:
       - assets/images/Image1.png
       - assets/images/Image2.png
       - assets/images/done.png
+      - assets/images/Menu1.png
+      - assets/images/Menu2.png
+      - assets/images/Menu3.png
+      - assets/images/Menu4.png
+      - assets/images/Profile.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

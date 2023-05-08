@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:seniorplus/screens/health-screen.dart';
 import 'package:seniorplus/screens/home-screen.dart';
 import 'package:seniorplus/screens/notification-screen.dart';
+import 'package:seniorplus/screens/user-screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     HealthScreen(),
     NotificationScreen(),
-    Center(child: Text('User Screen')),
+    UserScreen(),
   ];
 
   void _onItemTapped(int index) {

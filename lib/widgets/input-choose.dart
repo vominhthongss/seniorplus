@@ -4,14 +4,14 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 class InputChoose extends StatefulWidget {
   final String label;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String hintText;
   final int maxLines;
   final bool? uploadImage;
   const InputChoose(
       {super.key,
       required this.label,
-      required this.controller,
+      this.controller,
       required this.maxLines,
       required this.hintText,
       this.uploadImage});
