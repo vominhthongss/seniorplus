@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/interfaces/info-book.dart';
+import 'package:seniorplus/screens/home-screen.dart';
 import 'package:seniorplus/screens/main-screen.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/select-choose.dart';
@@ -414,6 +417,13 @@ class _PreviewInfoBookScreenState extends State<PreviewInfoBookScreen> {
                             "dateTime": widget.infoBook.dateTime,
                             "symptom": widget.infoBook.symptom,
                           };
+                          Timer(const Duration(seconds: 3), () {
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pop();
+                          });
                           saveBook(item);
                           // Navigator.pushReplacement(
                           //   context,

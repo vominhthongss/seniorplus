@@ -22,7 +22,7 @@ class _BookScreenState extends State<BookScreen> {
         'Bệnh viện Hữu Nghị là một bệnh viện công lập đa khoa lớn ở Hà Nội, Việt Nam. Tiền thân của bệnh viện là "Bệnh viện Hữu Nghị Việt – Xô", được thành lập năm 1958. Đây là bệnh viện đa khoa hoàn chỉnh loại I, có nhiệm vụ khám chữa bệnh cho cán bộ cấp trung cao trong cơ quan dân chính Đảng ở các tính phía bắc.'),
     Hospital(
         'Bệnh viện Bạch Mai',
-        'số 78 đường Giải Phóng, phường Phương Mai, quận Đống Đa, Hà Nội',
+        'số 78 đường Giải Phóng Hà Nội',
         'https://cdnimg.vietnamplus.vn/uploaded/lepz/2022_01_01/benh_vien_bach_mai.jpg',
         'Bệnh viện Bạch Mai là một bệnh viện công lập đa khoa lớn ở Hà Nội, Việt Nam. Tiền thân của bệnh viện là "Bệnh viện Bạch Mai", được thành lập năm 1958. Đây là bệnh viện đa khoa hoàn chỉnh loại I, có nhiệm vụ khám chữa bệnh cho cán bộ cấp trung cao trong cơ quan dân chính Đảng ở các tính phía bắc.')
   ];

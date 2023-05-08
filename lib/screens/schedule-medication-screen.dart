@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -8,6 +9,7 @@ import 'package:seniorplus/interfaces/schedule-medication-drug.dart';
 import 'package:seniorplus/interfaces/schedule-medication-time.dart';
 import 'package:seniorplus/interfaces/test.dart';
 import 'package:seniorplus/interfaces/user.dart';
+import 'package:seniorplus/screens/home-screen.dart';
 import 'package:seniorplus/widgets/border-button.dart';
 import 'package:seniorplus/widgets/button.dart';
 import 'package:seniorplus/widgets/day-button.dart';
@@ -101,6 +103,7 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
                 ),
               );
             });
+
         print('Data posted successfully');
       } else {
         throw Exception('Failed to post data');
@@ -800,6 +803,11 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
                               "times": times.map((t) => t.toJson()).toList(),
                               "days": days,
                             };
+                            Timer(const Duration(seconds: 3), () {
+                              Navigator.of(context).pop();
+                              Navigator.of(context).pop();
+                            });
+                            //Navigator.of(context).pop();
                             saveSchedule(items);
                           },
                         ),
