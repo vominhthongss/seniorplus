@@ -78,7 +78,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 children: [
                   Container(
                     height: 36.0,
-                    width: MediaQuery.of(context).size.width / 3 + 20,
+                    width: MediaQuery.of(context).size.width / 3 + 15,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
@@ -142,7 +142,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   ),
                   Container(
                     height: 36.0,
-                    width: MediaQuery.of(context).size.width / 3 + 20,
+                    width: MediaQuery.of(context).size.width / 3 + 15,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
@@ -229,7 +229,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               setState(() {});
                             },
                             child: SizedBox(
-                              height: MediaQuery.of(context).size.height - 301,
+                              height: MediaQuery.of(context).size.height - 400,
                               child: ListView.builder(
                                 itemCount: data.length,
                                 itemBuilder: (context, index) {
