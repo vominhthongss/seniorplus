@@ -4,6 +4,9 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:seniorplus/constants/colors.dart';
 import 'package:seniorplus/screens/health-detail-screen.dart';
 import 'package:seniorplus/widgets/button.dart';
+import 'package:seniorplus/widgets/select-choose.dart';
+
+import '../widgets/input-choose.dart';
 
 class HealthScreen extends StatefulWidget {
   const HealthScreen({super.key});
@@ -13,6 +16,7 @@ class HealthScreen extends StatefulWidget {
 }
 
 class _HealthScreenState extends State<HealthScreen> {
+  final TextEditingController testController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +57,7 @@ class _HealthScreenState extends State<HealthScreen> {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Container(
-                    transform: Matrix4.translationValues(0.0, -100.0, 0.0),
+                    transform: Matrix4.translationValues(0.0, -80.0, 0.0),
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -67,7 +71,7 @@ class _HealthScreenState extends State<HealthScreen> {
                         color: Colors.white,
                         border: Border.all(width: 1, color: Colors.black)),
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -85,7 +89,126 @@ class _HealthScreenState extends State<HealthScreen> {
                                 width: 150,
                                 child: Button(
                                   text: 'Thêm người thân',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: Text('Chọn người thân'),
+                                          content: Container(
+                                            height: 400,
+                                            child: Column(
+                                              children: [
+                                                InputChoose(
+                                                  label: 'Họ tên',
+                                                  controller: testController,
+                                                  maxLines: 1,
+                                                  hintText: 'Họ tên',
+                                                ),
+                                                SelectChoose(
+                                                  label: 'Mối quan hệ',
+                                                  dataList: [],
+                                                  controller: testController,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Container(
+                                                            width: 20,
+                                                            height: 20,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              border: Border.all(
+                                                                  width: 1,
+                                                                  color: Colors
+                                                                      .black),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                          ),
+                                                          Text('Nam')
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Container(
+                                                            width: 20,
+                                                            height: 20,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              border: Border.all(
+                                                                  width: 1,
+                                                                  color: Colors
+                                                                      .black),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                          ),
+                                                          Text('Nữ')
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Container(
+                                                            width: 20,
+                                                            height: 20,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              border: Border.all(
+                                                                  width: 1,
+                                                                  color: Colors
+                                                                      .black),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          100),
+                                                            ),
+                                                          ),
+                                                          Text('Khác')
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                InputChoose(
+                                                  label: 'Số điện thoại',
+                                                  controller: testController,
+                                                  maxLines: 1,
+                                                  hintText: 'Số điện thoại',
+                                                ),
+                                                SelectChoose(
+                                                  label:
+                                                      'Chọn ngày tháng năm sinh',
+                                                  dataList: [],
+                                                  controller: testController,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                    ;
+                                  },
                                 ),
                               )
                             ],

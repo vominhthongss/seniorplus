@@ -56,6 +56,51 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
         data: items,
       );
       if (response.statusCode == 200) {
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  side: BorderSide(
+                    color: Colors.grey,
+                    width: 1.0,
+                  ),
+                ),
+                contentPadding: EdgeInsets.zero,
+                content: Container(
+                  height: 200,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 300,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          ),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            stops: [0.045, 1.0],
+                            colors: [Color(PRIMARY_COLOR), Color(SECOND_COLOR)],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset('assets/images/done.png'),
+                      ),
+                      Text(
+                        'Chúc mừng bạn đã lưu thành công',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              );
+            });
         print('Data posted successfully');
       } else {
         throw Exception('Failed to post data');

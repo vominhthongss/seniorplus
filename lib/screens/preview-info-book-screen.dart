@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -24,6 +25,70 @@ class _PreviewInfoBookScreenState extends State<PreviewInfoBookScreen> {
     setState(() {
       isPreview = !isPreview;
     });
+  }
+
+  final dio = Dio();
+  void saveBook(items) async {
+    try {
+      print(items);
+      final response = await dio.post(
+        'https://seniorplus-2ad6e-default-rtdb.firebaseio.com/book.json',
+        data: items,
+      );
+      if (response.statusCode == 200) {
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  side: BorderSide(
+                    color: Colors.grey,
+                    width: 1.0,
+                  ),
+                ),
+                contentPadding: EdgeInsets.zero,
+                content: Container(
+                  height: 200,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 300,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          ),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            stops: [0.045, 1.0],
+                            colors: [Color(PRIMARY_COLOR), Color(SECOND_COLOR)],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset('assets/images/done.png'),
+                      ),
+                      Text(
+                        'Chúc mừng bạn đã lưu thành công',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              );
+            });
+
+        print('Data posted successfully');
+      } else {
+        throw Exception('Failed to post data');
+      }
+    } catch (e) {
+      print('Error posting data: $e');
+    }
   }
 
   @override
@@ -341,11 +406,20 @@ class _PreviewInfoBookScreenState extends State<PreviewInfoBookScreen> {
                       child: Button(
                         text: 'Kết thúc',
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MainScreen()),
-                          );
+                          final item = {
+                            "fullname": widget.infoBook.fullname,
+                            "hospitalName": widget.infoBook.hospitalName,
+                            "hospitalAddress": widget.infoBook.hospitalAddress,
+                            "service": widget.infoBook.service,
+                            "dateTime": widget.infoBook.dateTime,
+                            "symptom": widget.infoBook.symptom,
+                          };
+                          saveBook(item);
+                          // Navigator.pushReplacement(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => const MainScreen()),
+                          // );
                         },
                       ),
                     ),
