@@ -417,7 +417,7 @@ class _PreviewInfoBookScreenState extends State<PreviewInfoBookScreen> {
                             "dateTime": widget.infoBook.dateTime,
                             "symptom": widget.infoBook.symptom,
                           };
-                          Timer(const Duration(seconds: 3), () {
+                          Timer(const Duration(seconds: 1), () {
                             Navigator.of(context).pop();
                             Navigator.of(context).pop();
                             Navigator.of(context).pop();
@@ -501,7 +501,9 @@ class InfoItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(type),
-                    Text(info),
+                    SizedBox(
+                        width: MediaQuery.of(context).size.width - 100,
+                        child: Text(info)),
                   ],
                 ),
               ],

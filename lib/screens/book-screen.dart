@@ -149,7 +149,7 @@ class _BookScreenState extends State<BookScreen> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
                   child: SizedBox(
-                    height: MediaQuery.of(context).size.height - 232,
+                    height: MediaQuery.of(context).size.height - 300,
                     child: ListView.builder(
                       itemCount: hospitals.length,
                       itemBuilder: (context, index) {
