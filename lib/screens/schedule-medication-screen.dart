@@ -53,61 +53,13 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
 
   void saveSchedule(items) async {
     try {
+      Dio dio = Dio();
       final response = await dio.post(
         'https://seniorplus-2ad6e-default-rtdb.firebaseio.com/schedule.json',
         data: items,
       );
-      if (response.statusCode == 200) {
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  side: BorderSide(
-                    color: Colors.grey,
-                    width: 1.0,
-                  ),
-                ),
-                contentPadding: EdgeInsets.zero,
-                content: Container(
-                  height: 200,
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 300,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          ),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            stops: [0.045, 1.0],
-                            colors: [Color(PRIMARY_COLOR), Color(SECOND_COLOR)],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('assets/images/done.png'),
-                      ),
-                      Text(
-                        'Chúc mừng bạn đã lưu thành công',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ),
-              );
-            });
 
-        print('Data posted successfully');
-      } else {
-        throw Exception('Failed to post data');
-      }
+      print('Data posted successfully');
     } catch (e) {
       print('Error posting data: $e');
     }
@@ -187,7 +139,7 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
                     child: Row(
                       children: const [
                         Padding(
-                          padding: EdgeInsets.all(20.0),
+                          padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                           child: Text(
                             'Thuốc cần uống',
                             style: TextStyle(
@@ -803,6 +755,57 @@ class _ScheduleMedicationScreenState extends State<ScheduleMedicationScreen> {
                               "times": times.map((t) => t.toJson()).toList(),
                               "days": days,
                             };
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      side: BorderSide(
+                                        color: Colors.grey,
+                                        width: 1.0,
+                                      ),
+                                    ),
+                                    contentPadding: EdgeInsets.zero,
+                                    content: Container(
+                                      height: 200,
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 50,
+                                            width: 300,
+                                            decoration: const BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(10),
+                                                topRight: Radius.circular(10),
+                                              ),
+                                              gradient: LinearGradient(
+                                                begin: Alignment.topCenter,
+                                                end: Alignment.bottomCenter,
+                                                stops: [0.045, 1.0],
+                                                colors: [
+                                                  Color(PRIMARY_COLOR),
+                                                  Color(SECOND_COLOR)
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Image.asset(
+                                                'assets/images/done.png'),
+                                          ),
+                                          Text(
+                                            'Chúc mừng bạn đã lưu thành công',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                });
+
                             Timer(const Duration(seconds: 3), () {
                               Navigator.of(context).pop();
                               Navigator.of(context).pop();

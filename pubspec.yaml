@@ -139,6 +139,7 @@ flutter:
       - assets/images/Menu3.png
       - assets/images/Menu4.png
       - assets/images/Profile.png
+      - assets/images/trello.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
